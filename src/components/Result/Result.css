@@ -1,0 +1,9 @@
+.resultCard {
+  display: flex;
+  justify-content: center;
+  margin: 50px;
+}
+
+.card-xxx {
+  width: 18rem;
+}
