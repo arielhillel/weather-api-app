@@ -1,13 +1,15 @@
 import "./History.css";
 import { useDispatch, useSelector } from "react-redux";
+import { clearAction } from "../../redux/Reducers/weather/weather-actions";
 
 import React from "react";
 import { Table } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 
 const History = () => {
   let historyState = useSelector((s) => s.weather);
   let counter = 0;
-
+  const dispachNow = useDispatch();
   return (
     <div className="history-page">
       <Table striped bordered hover variant="dark">
@@ -37,6 +39,14 @@ const History = () => {
           )}
         </tbody>
       </Table>
+      <Button
+        variant="outline-secondary"
+        onClick={() => {
+          dispachNow(clearAction());
+        }}
+      >
+        Clear History
+      </Button>
     </div>
   );
 };

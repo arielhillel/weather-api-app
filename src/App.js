@@ -4,6 +4,7 @@ import Home from "./containers/Home/Home";
 import History from "./containers/History/History";
 
 import { Route, Routes } from "react-router-dom";
+
 function App() {
   return (
     <div className="App">

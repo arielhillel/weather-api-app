@@ -3,7 +3,6 @@ import { Button, FormControl, InputGroup } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import {
   SearchAction,
-  clearAction,
   addToHistoryAction,
 } from "../../redux/Reducers/weather/weather-actions";
 import "./Search.css";
@@ -16,10 +15,6 @@ export const Search = () => {
 
   const dispachNow = useDispatch();
   let weaterState = useSelector((s) => s.weather);
-
-  const refresh = () => {
-    setrefreshState(Math.random());
-  };
 
   useEffect(() => {
     fetch(
@@ -57,7 +52,7 @@ export const Search = () => {
           onClick={() => {
             console.log("Get button clicked");
             RunHttpFlag = !RunHttpFlag;
-            refresh();
+            setrefreshState(Math.random());
           }}
         >
           Get
