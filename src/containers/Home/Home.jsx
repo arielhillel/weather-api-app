@@ -17,7 +17,6 @@ const Home = () => {
         className="content"
       />
       <Result />
-      <History />
     </div>
   );
 };

@@ -1,0 +1,9 @@
+.link-navBar {
+  color: rgba(255, 255, 255, 0.55);
+  text-decoration: none;
+  padding: 8px;
+}
+
+.link-navBar:hover {
+  color: rgba(255, 255, 255, 0.836);
+}

@@ -8,6 +8,24 @@ import {
 import "./Result.css";
 export const Result = () => {
   let weaterState = useSelector((s) => s.weather);
+  if (weaterState === 0) {
+    return (
+      <div className="resultCard">
+        <Card className="card-xxx">
+          <Card.Img
+            variant="top"
+            src="https://www.timeanddate.com/scripts/weather_og.php?h1=Weather&h2=Local%20Weather%20Around%20the%20World"
+          />
+          <Card.Body>
+            <Card.Title>Enter a city</Card.Title>
+            <img
+              src={weaterState?.lastSearthResult?.current?.condition?.icon}
+            />
+          </Card.Body>
+        </Card>
+      </div>
+    );
+  }
   return (
     <div className="resultCard">
       <Card className="card-xxx">

@@ -10,26 +10,28 @@ import "./Search.css";
 let RunHttpFlag = true;
 
 export const Search = () => {
-  const [state, setState] = useState("London");
+  const [state, setState] = useState("");
   const [refreshState, setrefreshState] = useState(0);
 
   const dispachNow = useDispatch();
   let weaterState = useSelector((s) => s.weather);
 
   useEffect(() => {
-    fetch(
-      `https://api.weatherapi.com/v1/current.json?key=b480e7a490374b44be472511222103&q=${state}&aqi=no`
-    )
-      .then((res) => res.json())
-      .then(
-        (result) => {
-          dispachNow(SearchAction(result));
-          dispachNow(addToHistoryAction(result));
-        },
-        (error) => {
-          alert(error);
-        }
-      );
+    if (state !== "") {
+      fetch(
+        `https://api.weatherapi.com/v1/current.json?key=b480e7a490374b44be472511222103&q=${state}&aqi=no`
+      )
+        .then((res) => res.json())
+        .then(
+          (result) => {
+            dispachNow(SearchAction(result));
+            dispachNow(addToHistoryAction(result));
+          },
+          (error) => {
+            alert(error);
+          }
+        );
+    }
   }, [RunHttpFlag]);
 
   return (

@@ -1,3 +1,9 @@
 .history-page {
   margin: 2.5% 5%;
 }
+
+.clear-history {
+  display: flex;
+  justify-content: start;
+  padding: 10px 0;
+}
