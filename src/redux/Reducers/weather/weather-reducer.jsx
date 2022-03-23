@@ -1,7 +1,7 @@
 import * as weatherTypes from "./weather-types";
 
 const reducerWeather = (state, action) => {
-  const resetO = { lastSearthResult: {}, history: [], refresh: 0 };
+  const resetO = { lastSearthResult: {}, history: [] };
   if (state === 0) {
     state = resetO;
   }
