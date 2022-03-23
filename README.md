@@ -1,1 +1,1 @@
-## DENO - (https://weather-api-client.herokuapp.com/)
+## DEMO - (https://weather-api-client.herokuapp.com/)
